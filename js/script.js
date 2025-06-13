@@ -412,10 +412,10 @@ function renderTable() {
         const displayTitle = link.url ? extractProblemName(link.url) : link.title;
         row.innerHTML = `
             <td></td>
-            <td>${link.difficulty || ''}</td>
-            <td><a href="${link.url || '#'}" target="_blank" title="${link.url || ''}">${displayTitle}</a></td>
-            <td data-status="${link.status}">${link.status}</td>
-            <td><span class="toggle-status" data-index="${index}">${actionText}</span></td>
+            <td data-label="Difficulty">${link.difficulty || ''}</td>
+            <td data-label="Link"><a href="${link.url || '#'}" target="_blank" title="${link.url || ''}">${displayTitle}</a></td>
+            <td data-label="Status" data-status="${link.status}">${link.status}</td>
+            <td data-label="Action"><span class="toggle-status" data-index="${index}">${actionText}</span></td>
         `;
         tableBody.appendChild(row);
 

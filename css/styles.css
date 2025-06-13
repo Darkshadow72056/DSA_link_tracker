@@ -232,21 +232,51 @@ tr.difficulty-header td {
         max-width: 90%;
     }
 
-    #linkTable {
-        font-size: 0.85rem;
+    #linkTable thead {
+        display: none;
     }
 
-    #linkTable th, #linkTable td {
-        padding: 8px;
+    #linkTable, #linkTable tbody, #linkTable tr, #linkTable td {
+        display: block;
+        width: 100%;
     }
 
-    #linkTable th:first-child, #linkTable td:first-child {
-        display: none; /* Hide empty first column on mobile */
+    #linkTable tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
     }
 
-    .table-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+    #linkTable td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-bottom: 1px solid #eee;
+    }
+
+    #linkTable td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: calc(50% - 20px);
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    #linkTable td:last-child {
+        border-bottom: none;
+    }
+
+    tr.topic-header td, tr.difficulty-header td {
+        text-align: center;
+        padding-left: 12px;
+    }
+
+    tr.topic-header td:before, tr.difficulty-header td:before {
+        content: "";
     }
 }
 
